@@ -2,12 +2,14 @@ import {configureStore, createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 interface AuthState {
   password: string;
+  correctPassword: string;
   isAccessGranted: boolean;
   message: string;
 }
 
 const initialState: AuthState = {
   password: '',
+  correctPassword: '1337',
   isAccessGranted: false,
   message: '',
 };
