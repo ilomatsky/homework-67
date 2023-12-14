@@ -21,9 +21,6 @@ const authSlice = createSlice({
     setPassword: (state, action: PayloadAction<string>) => {
       state.password = action.payload;
     },
-    clearPassword: (state) => {
-      state.password = '';
-    },
     grantAccess: (state) => {
       state.isAccessGranted = true;
       state.message = 'Access Granted';
@@ -35,7 +32,7 @@ const authSlice = createSlice({
   },
 });
 
-export const {setPassword, clearPassword, grantAccess, denyAccess} = authSlice.actions;
+export const {setPassword, grantAccess, denyAccess} = authSlice.actions;
 
 export const authReducer = authSlice.reducer;
 
@@ -46,4 +43,3 @@ export const store = configureStore({
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
